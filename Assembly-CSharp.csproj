@@ -60,7 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MeshTest.cs" />
     <Compile Include="Assets\Script\Clock.cs" />
+    <Compile Include="Assets\Script\Grid.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/Learning Pipe/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
