@@ -14,10 +14,12 @@ public class Clock : MonoBehaviour
     private void Awake()
     {
         // Debug.Log("Time right now: "+System.DateTime.Now);
+       /* 
         System.DateTime time = System.DateTime.Now;
         hoursTransform.localRotation = Quaternion.Euler(0f, time.Hour * degreesPerHour, 0f);
         minutesTransform.localRotation = Quaternion.Euler(0f, time.Minute * degreesPerMinute, 0f);
         secondsTransform.localRotation = Quaternion.Euler(0f,time.Second * degreesPerSecond, 0f);
+        */
     }
 
     // Start is called before the first frame update
