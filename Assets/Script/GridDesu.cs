@@ -25,9 +25,9 @@ public class GridDesu : MonoBehaviour
         Debug.Log(xSize);
         vertices = new Vector3[ (xSize + 1) * (ySize + 1) ]; 
         //Positioning the vertices
-        for(int i =0, y = 0;  y<= ySize; y++)
+        for(int i =0, y =ySize; y>= 0 ; y--)
         {
-            for(int x=0; x<= xSize; x++, i++)
+            for(int x=xSize; x>= 0 ; x--, i++)
             {
                 vertices[i] = new Vector3(x, y);
                 yield return wait;
@@ -39,13 +39,13 @@ public class GridDesu : MonoBehaviour
         Vector2[] uv = new Vector2[vertices.Length];
         Vector4[] tangents = new Vector4[vertices.Length];
         Vector4 tangent = new Vector4(1f, 0f, 0f, -1f);
-        for (int i = 0, y = 0; y <= ySize; y++)
+        for (int i = 0, y = ySize; y >= 0; y--)
         {
-            for (int x = 0; x <= xSize; x++, i++)
+            for (int x = xSize; x >= 0; x--, i++)
             {
-                vertices[i] = new Vector3(x, y);
-                uv[i] = new Vector2((float)x / xSize, (float)y / ySize); //why?
-                //uv[i] = new Vector2(x/xSize, y/ySize);
+                //The coordinates will run from (0,0) to (1,1)
+                uv[i] = new Vector2((float)x / xSize, (float)y / ySize);
+                //uv[i] = new Vector2(vertices[i].x, vertices[i].y);
                 tangents[i] = tangent;
             }
         }
