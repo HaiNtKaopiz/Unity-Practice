@@ -5,6 +5,9 @@ using UnityEngine;
 public class Tube : MonoBehaviour
 {
     public int NumberOfPoints;
+    public Vector3 center1;
+    public Vector3 center2;
+    public float radius;
 
     private Vector3[] vertices;
     private List<Vector3> circle01;
@@ -25,8 +28,8 @@ public class Tube : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Drawing Tube";
 
-        circle01 = MakeCircle(new Vector3(0, 0));
-        circle02 = MakeCircle(new Vector3(0, 0,-5));
+        circle01 = MakeCircle(center1);
+        circle02 = MakeCircle(center2);
         circle01.AddRange(circle02);
         vertices = circle01.ToArray();
 
@@ -79,7 +82,7 @@ public class Tube : MonoBehaviour
         Quaternion quaternion = Quaternion.Euler(0.0f, 0.0f, angleStep);
 
         //circleList.Add(center);
-        circleList.Add(center + new Vector3(0.0f, 0.5f, 0.0f)); //Circle Radius 0.5f
+        circleList.Add(center + new Vector3(0.0f, radius, 0.0f)); //Circle Radius
         circleList.Add(quaternion * circleList[0]);
         for (int i = 0; i < NumberOfPoints ; i++)
         {

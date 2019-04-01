@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\MeshTest.cs" />
     <Compile Include="Assets\Script\Clock.cs" />
-    <Compile Include="Assets\Script\Draft.cs" />
     <Compile Include="Assets\Script\GridDesu.cs" />
     <Compile Include="Assets\Script\Tube.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
