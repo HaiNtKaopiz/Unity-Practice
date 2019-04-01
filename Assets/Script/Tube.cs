@@ -79,7 +79,7 @@ public class Tube : MonoBehaviour
         Quaternion quaternion = Quaternion.Euler(0.0f, 0.0f, angleStep);
 
         //circleList.Add(center);
-        circleList.Add(center + new Vector3(0.0f, 0.5f, 0.0f));
+        circleList.Add(center + new Vector3(0.0f, 0.5f, 0.0f)); //Circle Radius 0.5f
         circleList.Add(quaternion * circleList[0]);
         for (int i = 0; i < NumberOfPoints ; i++)
         {
