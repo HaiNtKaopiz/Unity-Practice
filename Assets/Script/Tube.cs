@@ -17,12 +17,13 @@ public class Tube : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(Generate());
+        //StartCoroutine(Generate());
+        Generate();
     }
 
-    private IEnumerator Generate()
+    private void Generate()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.05f);
+        //WaitForSeconds wait = new WaitForSeconds(0.05f);
         Debug.Log(NumberOfPoints);
 
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
@@ -48,7 +49,7 @@ public class Tube : MonoBehaviour
             triangles.Add(vi + 1);
             triangles.Add(vi + num + 1);
             triangles.Add(vi + num + 2);
-            yield return wait;
+            //yield return wait;
         }
 
         for (int ti = 0, vi = 0, x = 0; x < num; x++, ti += 6, vi++)
@@ -59,7 +60,7 @@ public class Tube : MonoBehaviour
             triangles.Add(vi + num + 1);
             triangles.Add(vi + 1);
             triangles.Add(vi + num + 2);
-            yield return wait;
+           // yield return wait;
         }
 
         mesh.vertices = vertices;
@@ -72,7 +73,7 @@ public class Tube : MonoBehaviour
         }
 
         //OldMakeCircle(NumberOfPoints);
-        yield return wait;
+        //yield return wait;
     }
 
     public List<Vector3> MakeCircle(Vector3 center)
